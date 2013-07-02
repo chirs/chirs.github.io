@@ -19,7 +19,7 @@
   <script type="text/javascript">
   $(document).ready(function() {
     var board = new Board([100, 100], 10, neighborhoods.moore, 10).setRule(rules.makeCyclic(10))
-    draw2dBoard("board", board3, 3);
+    draw2dBoard("board", board, 3);
   });
   </script>
 
@@ -29,33 +29,31 @@
     <div class="wrapper">
       <header>
         <h1>Chirs.github.io</h1>
-        <p>github pages</p>
+        <p class="view"><a href="https://github.com/chirs">github</a></p>
 
-
-        <p class="view"><a href="https://github.com/chirs">View My GitHub Profile</a></p>
+        <p>Links to projects.</p>
+        <ul>
+          <li><a href="http://chirs.github.io/structures">structures</a></li>
+          <li><a href="http://chirs.name">chirs.game</a></li>
+          <li><a href="http://pacman.edgemon.org">pacman in clojurescript</a></li>
+          <li><a href="http://github.com/chirs/slug">lisp interpreter in javascript</a></li>
+        </ul>
 
       </header>
       <section>
-        <h3>
-<a name="chirsgithubio" class="anchor" href="#chirsgithubio"><span class="octicon octicon-link"></span></a>chirs.github.io</h3>
 
-<p>Links to projects.</p>
+        <pre><code>
+            var board = new Board([100, 100], 3, 
+            neighborhoods.moore, 
+            [0.70, 0.3, .0]
+            ).setRule(rules.makeTree(.05, .003))
+            draw2dBoard("board", board, 3);
+        </code></pre>
 
-<p><a href="http://structures.edgemon.org">structures</a></p>
-<p><a href="http://chirs.name">chirs.game</a></p>
-
-<pre><code>
-var board = new Board([100, 100], 3, 
-                      neighborhoods.moore, 
-                      [0.70, 0.3, .0]
-                     ).setRule(rules.makeTree(.05, .003))
-draw2dBoard("board", board, 3);
-</code></pre>
-
-  <canvas id="board" width="300" height="300"></canvas>
-
+        <canvas id="board" width="300" height="300"></canvas>
 
       </section>
+
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
