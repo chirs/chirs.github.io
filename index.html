@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Chirs.github.io by chirs</title>
+    <title>chirs.github.io</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -33,34 +33,47 @@
         
       }, 1000 / 60)
 
-
   });
   </script>
-
-
   </head>
+
+
   <body>
     <div class="wrapper">
       <header>
         <h1>Chirs.github.io</h1>
-        <p class="view"><a href="https://github.com/chirs">github</a></p>
+        <p><a href="https://github.com/chirs">github</a></p>
 
-        <p>Links to projects.</p>
+        <p>projects</p>
         <ul>
           <li><a href="http://chirs.github.io/structures">structures</a></li>
           <li><a href="http://chirs.name">chirs.game</a></li>
-          <li><a href="http://pacman.edgemon.org">pacman in clojurescript</a></li>
-          <li><a href="http://github.com/chirs/slug">lisp interpreter in javascript</a></li>
+          <li><a href="http://pacman.edgemon.org">cljs pacman</a></li>
+          <li><a href="http://github.com/chirs/slug">lisp interpreter</a></li>
         </ul>
 
       </header>
+
       <section>
 
         <pre><code>
+          var canvas = document.getElementById("board");
+          var ctx = canvas.getContext("2d");
+
+          var board = new Board([300, 300], 2, neighborhoods.moore, [0.6, 0.4])
+          board.setRule(rules.gameOfLife)
+      
+          var d = new Drawer(ctx, board, 1)
+          d.drawTable(board.getState())
+          setInterval(function(){
+            var diff = board.next();
+            d.drawTableDiff();
+          }, 1000 / 60)
+
             var board = new Board([100, 100], 3, 
-            neighborhoods.moore, 
-            [0.70, 0.3, .0]
-            ).setRule(rules.makeTree(.05, .003))
+                neighborhoods.moore, 
+                [0.70, 0.3, .0]
+                ).setRule(rules.makeTree(.05, .003))
             draw2dBoard("board", board, 3);
         </code></pre>
 
@@ -69,7 +82,7 @@
       </section>
 
       <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on GitHub Pages; </small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
