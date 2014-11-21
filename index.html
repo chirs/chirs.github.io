@@ -12,29 +12,6 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="http://structures.edgemon.org/js/automata.js"></script>
-  <script type="text/javascript" src="http://structures.edgemon.org/js/draw.js"></script>
-
-  <script type="text/javascript">
-  $(document).ready(function() {
-
-      var canvas = document.getElementById("board");
-      var ctx = canvas.getContext("2d");
-
-      var board = new Board([300, 300], 2, neighborhoods.moore, [0.6, 0.4])
-      board.setRule(rules.gameOfLife)
-      
-      var d = new Drawer(ctx, board, 1)
-      d.drawTable(board.getState())
-      setInterval(function(){
-        var diff = board.next();
-        d.drawTableDiff();
-        
-      }, 1000 / 60)
-
-  });
-  </script>
   </head>
 
 
@@ -43,48 +20,17 @@
       <header>
         <h1>Chirs.github.io</h1>
         <p><a href="https://github.com/chirs">github</a></p>
-
-        <p>projects</p>
-        <ul>
-          <li><a href="http://chirs.github.io/structures">structures</a></li>
-          <li><a href="http://chirs.name">chirs.game</a></li>
-          <li><a href="http://pacman.edgemon.org">cljs pacman</a></li>
-          <li><a href="http://github.com/chirs/slug">lisp interpreter</a></li>
-        </ul>
-
+        <p>all projects hidden for now.</p>
       </header>
 
       <section>
-
-        <pre><code>
-          var canvas = document.getElementById("board");
-          var ctx = canvas.getContext("2d");
-
-          var board = new Board([300, 300], 2, neighborhoods.moore, [0.6, 0.4])
-          board.setRule(rules.gameOfLife)
-      
-          var d = new Drawer(ctx, board, 1)
-          d.drawTable(board.getState())
-          setInterval(function(){
-            var diff = board.next();
-            d.drawTableDiff();
-          }, 1000 / 60)
-
-            var board = new Board([100, 100], 3, 
-                neighborhoods.moore, 
-                [0.70, 0.3, .0]
-                ).setRule(rules.makeTree(.05, .003))
-            draw2dBoard("board", board, 3);
-        </code></pre>
-
-        <canvas id="board" width="300" height="300"></canvas>
-
       </section>
 
       <footer>
-        <p><small>Hosted on GitHub Pages; </small></p>
+        <p><small>. </small></p>
       </footer>
     </div>
+
     <script src="javascripts/scale.fix.js"></script>
     
   </body>
